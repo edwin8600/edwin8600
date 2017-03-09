@@ -3,6 +3,7 @@ package etiquetado;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import opennlp.tools.util.Span;
 import org.junit.Test;
@@ -35,10 +36,13 @@ public class EtiquetadoNERTest {
 	@Test
 	public void oracionEtiquetada() {
 		EtiquetadoNER etiquetado = new EtiquetadoNER();
-		etiquetado.oracionEtiquetada("ADQUISICION DE LICENCIAS DE SOFTWARE UTILITARIOS PARA CONECUAKOR");
+		etiquetado.oracionEtiquetada("ADQUISICIÓN DE SOFTWARE DE TELECOMUNICACIONES PARA EL CICTE");
 	}
 	
-	
-	
-
+	@Test
+	public void hashmapOracionEtiquetada() {
+		EtiquetadoNER etiquetado = new EtiquetadoNER();
+		HashMap<Integer, String> mapaEtiquetas = etiquetado.oracionEtiquetadaHash("ADQUISICIÓN DE SOFTWARE DE TELECOMUNICACIONES PARA EL CICTE");
+		assertNotNull(mapaEtiquetas);
+	}
 }
