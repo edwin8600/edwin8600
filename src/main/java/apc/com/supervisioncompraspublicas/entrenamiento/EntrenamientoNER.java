@@ -1,4 +1,4 @@
-package apc.com.supervicioncompraspublicas.entrenamiento;
+package apc.com.supervisioncompraspublicas.entrenamiento;
 
 import java.io.BufferedOutputStream;
 import java.io.FileInputStream;

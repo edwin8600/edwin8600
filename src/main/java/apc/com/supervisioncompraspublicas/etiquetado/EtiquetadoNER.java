@@ -1,4 +1,4 @@
-package apc.com.supervicioncompraspublicas.etiquetado;
+package apc.com.supervisioncompraspublicas.etiquetado;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

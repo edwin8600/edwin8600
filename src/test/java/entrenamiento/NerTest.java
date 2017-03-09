@@ -4,7 +4,8 @@ import static org.junit.Assert.*;
 import java.io.OutputStream;
 
 import org.junit.Test;
-import apc.com.supervicioncompraspublicas.entrenamiento.EntrenamientoNER;
+
+import apc.com.supervisioncompraspublicas.entrenamiento.EntrenamientoNER;
 import opennlp.tools.namefind.TokenNameFinderFactory;
 import opennlp.tools.namefind.TokenNameFinderModel;
 import opennlp.tools.util.InputStreamFactory;

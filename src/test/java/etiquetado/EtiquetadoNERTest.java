@@ -8,7 +8,7 @@ import java.util.HashMap;
 import opennlp.tools.util.Span;
 import org.junit.Test;
 
-import apc.com.supervicioncompraspublicas.etiquetado.EtiquetadoNER;
+import apc.com.supervisioncompraspublicas.etiquetado.EtiquetadoNER;
 
 public class EtiquetadoNERTest {
 
