@@ -37,6 +37,7 @@ public class EtiquetadoController
 			Text texto;
 
 			// Etiquetado
+			log.info("Inicio etiquetado");
 			EtiquetadoNER etiquetado = new EtiquetadoNER();
 			HashMap<Integer, String> mapaEtiquetas = etiquetado.oracionEtiquetadaHash(textoEvaluar.getText());
 

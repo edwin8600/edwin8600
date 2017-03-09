@@ -27,11 +27,11 @@ public class MainApp extends Application {
 		log.info("Supervision compras públicas");
 
 		String fxmlFile = "/fxml/Etiquetado.fxml";
-		log.debug("Loading FXML for main view from: {}", fxmlFile);
+		log.debug("Cargado FXML vista principal desde: {}", fxmlFile);
 		FXMLLoader loader = new FXMLLoader();
 		Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
-		log.debug("Showing JFX scene");
+		log.debug("Mostrando JFX scene");
 		Scene scene = new Scene(rootNode);
 		scene.getStylesheets().add("/styles/styles.css");
 
