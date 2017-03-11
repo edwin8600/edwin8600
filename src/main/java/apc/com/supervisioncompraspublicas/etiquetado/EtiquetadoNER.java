@@ -58,7 +58,6 @@ public class EtiquetadoNER {
 		this.tokenPalabras = oracionEntrada.split(" ");
 		TokenNameFinderModel modelNER;
 
-		System.out.println(oracionEntrada);
 		for (InputStream modelo : this.modelos) {
 			try {
 				// Carga modelo
@@ -119,8 +118,6 @@ public class EtiquetadoNER {
 			int inicio, fin;
 			String oracion = "";
 			String etiqueta = "";
-			
-			System.out.println("etiquetado: "+this.etiquetado.size());
 
 			for (int i = 0; i < this.etiquetado.size(); i++) {
 				inicio = this.etiquetado.get(i).getStart();

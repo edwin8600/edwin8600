@@ -37,6 +37,8 @@ public class EntradaDatos {
 				informacion += aux;
 			}
 			
+			archivo.close();
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -46,7 +48,7 @@ public class EntradaDatos {
 		JSONArray json = new JSONArray(informacion);
 		return json;
 	}
-
+	
 	public boolean llenarBaseDeDatos(JSONArray datos) {
 		Connection conn = Persistencia.instancia();
 		String insercion = "INSERT INTO CATALOGO "

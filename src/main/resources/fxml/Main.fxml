@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apc.com.supervisioncompraspublicas.MainController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuAbrir" text="Abrir" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuSalir" text="Salir" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" onAction="#menuCatalogo" text="Catalogo" />
+            <Menu mnemonicParsing="false" onAction="#menuEstadisticas" text="Estadisticas" />
+            <Menu mnemonicParsing="false" text="Prueba">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#menuEtiquetado" text="Etiquetado" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

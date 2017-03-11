@@ -11,7 +11,7 @@ import org.junit.Test;
 import apc.com.supervisioncompraspublicas.etiquetado.EtiquetadoNER;
 
 public class EtiquetadoNERTest {
-
+	
 	@Test
 	public void generarEtiquetado() {
 		EtiquetadoNER etiquetado = new EtiquetadoNER();

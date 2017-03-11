@@ -18,7 +18,7 @@ public class MainApp extends Application {
 		// Entrenamiento
 		//EntrenamientoNER entrenamientoNER = new EntrenamientoNER();
 		//entrenamientoNER.entrenar();
-		
+
 		launch(args);
 	}
 
@@ -26,7 +26,7 @@ public class MainApp extends Application {
 
 		log.info("Supervision compras públicas");
 
-		String fxmlFile = "/fxml/Etiquetado.fxml";
+		String fxmlFile = "/fxml/Main.fxml";
 		log.debug("Cargado FXML vista principal desde: {}", fxmlFile);
 		FXMLLoader loader = new FXMLLoader();
 		Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
