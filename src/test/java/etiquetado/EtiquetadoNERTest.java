@@ -36,13 +36,14 @@ public class EtiquetadoNERTest {
 	@Test
 	public void oracionEtiquetada() {
 		EtiquetadoNER etiquetado = new EtiquetadoNER();
-		etiquetado.oracionEtiquetada("ADQUISICIÓN DE SOFTWARE DE TELECOMUNICACIONES PARA EL CICTE");
+		HashMap<String, String> mapaEtiquetas = etiquetado.etiquetaOracion("CONTRATACI\u00d3N DEL SERVICIO DE ACTUALIZACI\u00d3N DE HARDWARE Y SOFTWARE DEL MODULO DE ELECCIONES DEL SISTEMA DE MANDO Y CONTROL DEL CC.FF.AA.");
+		assertNotNull(mapaEtiquetas);
 	}
 	
 	@Test
 	public void hashmapOracionEtiquetada() {
 		EtiquetadoNER etiquetado = new EtiquetadoNER();
-		HashMap<Integer, String> mapaEtiquetas = etiquetado.oracionEtiquetadaHash("ADQUISICIÓN DE SOFTWARE DE TELECOMUNICACIONES PARA EL CICTE");
+		HashMap<Integer, String> mapaEtiquetas = etiquetado.posicionEtiqueta("ADQUISICIÓN DE SOFTWARE DE TELECOMUNICACIONES PARA EL CICTE");
 		assertNotNull(mapaEtiquetas);
 	}
 }

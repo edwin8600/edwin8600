@@ -39,7 +39,7 @@ public class EtiquetadoController
 			// Etiquetado
 			log.info("Inicio etiquetado");
 			EtiquetadoNER etiquetado = new EtiquetadoNER();
-			HashMap<Integer, String> mapaEtiquetas = etiquetado.oracionEtiquetadaHash(textoEvaluar.getText());
+			HashMap<Integer, String> mapaEtiquetas = etiquetado.posicionEtiqueta(textoEvaluar.getText());
 
 			// Existe etiqueta
 			if (mapaEtiquetas != null) {

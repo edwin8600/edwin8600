@@ -1,5 +1,6 @@
 package apc.com.supervisioncompraspublicas.etiquetado;
 
+import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -29,11 +30,11 @@ public class EtiquetadoNER {
 	public EtiquetadoNER() {
 
 		try {
-			//Cargar modelos
-			this.modelInNERRelacion = new FileInputStream("/home/luis/Descargas/es-ner-relacion.bin");
-			this.modelInNERSoftware = new FileInputStream("/home/luis/Descargas/es-ner-software.bin");
-			this.modelInNEROrganizacion = new FileInputStream("/home/luis/Descargas/es-ner-organizacion.bin");
-			this.modelInNERTipo = new FileInputStream("/home/luis/Descargas/es-ner-tipo.bin");
+			//Cargar modelos en buffer para que soporte mark y reset
+			this.modelInNERRelacion = new BufferedInputStream(new FileInputStream("/home/luis/Descargas/es-ner-relacion.bin"));
+			this.modelInNERSoftware = new BufferedInputStream(new FileInputStream("/home/luis/Descargas/es-ner-software.bin"));
+			this.modelInNEROrganizacion = new BufferedInputStream(new FileInputStream("/home/luis/Descargas/es-ner-organizacion.bin"));
+			this.modelInNERTipo = new BufferedInputStream(new FileInputStream("/home/luis/Descargas/es-ner-tipo.bin"));
 
 			this.modelos.add(this.modelInNERRelacion);
 			this.modelos.add(this.modelInNERSoftware);
@@ -51,13 +52,17 @@ public class EtiquetadoNER {
 	 */
 	public ArrayList<Span> generarEtiquetas(String oracionEntrada) {
 
+		this.etiquetado.clear();
+		
 		// Tokens
 		this.tokenPalabras = oracionEntrada.split(" ");
 		TokenNameFinderModel modelNER;
 
+		System.out.println(oracionEntrada);
 		for (InputStream modelo : this.modelos) {
 			try {
 				// Carga modelo
+				modelo.mark(0);
 				modelNER = new TokenNameFinderModel(modelo);
 				NameFinderME nameFinder = new NameFinderME(modelNER);
 
@@ -68,6 +73,7 @@ public class EtiquetadoNER {
 					this.etiquetado.add(nameSpans[i]);
 				}
 
+				modelo.reset();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -105,12 +111,16 @@ public class EtiquetadoNER {
 	 * @param oracionEntrada oracion a ser etiquetada
 	 */
 
-	public void oracionEtiquetada(String oracionEntrada) {
+	public HashMap<String, String> etiquetaOracion(String oracionEntrada) {
+		HashMap<String, String> oracionEtiquetada = new HashMap<String, String>();
+		
 		if (!conflicto(generarEtiquetas(oracionEntrada))) {
 
 			int inicio, fin;
 			String oracion = "";
 			String etiqueta = "";
+			
+			System.out.println("etiquetado: "+this.etiquetado.size());
 
 			for (int i = 0; i < this.etiquetado.size(); i++) {
 				inicio = this.etiquetado.get(i).getStart();
@@ -118,21 +128,25 @@ public class EtiquetadoNER {
 				etiqueta = this.etiquetado.get(i).getType();
 
 				for (int j = inicio; j < fin; j++) {
-					oracion += tokenPalabras[j];
+					oracion += this.tokenPalabras[j];
 					if (j != fin-1 ) {
 						oracion += " ";
 					}
 				}
 
 				System.out.println(oracion + "*-*"+ etiqueta +" "+this.etiquetado.get(i).toString());
+				oracionEtiquetada.put(etiqueta, oracion);
+				
 				oracion = "";
 			}
 		} else {
 			System.out.println("conflicto");
+			return null;
 		}
+		return oracionEtiquetada;
 	}
 
-	public HashMap<Integer, String> oracionEtiquetadaHash(String oracionEntrada) {
+	public HashMap<Integer, String> posicionEtiqueta(String oracionEntrada) {
 		HashMap<Integer, String> oracionEtiquetada = new HashMap<Integer, String>();
 
 		if (!conflicto(generarEtiquetas(oracionEntrada))) {
@@ -156,5 +170,4 @@ public class EtiquetadoNER {
 
 		return oracionEtiquetada;
 	}
-
 }
