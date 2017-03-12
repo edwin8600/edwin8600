@@ -15,10 +15,9 @@ public class MainController {
 
 	@FXML private BorderPane panel;
 	private String rutaArchivo;
-	private FXMLLoader fxmlLoader;
 	
 	public MainController() {
-		this.fxmlLoader = new FXMLLoader();
+		
 	}
 	
 	@FXML 
@@ -33,7 +32,13 @@ public class MainController {
 
 	@FXML 
 	void menuCatalogo(ActionEvent event) {
-		
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader();
+			Parent p = fxmlLoader.load(getClass().getResourceAsStream("/fxml/Catalogo.fxml"));
+			this.panel.setCenter(p);   
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@FXML 
@@ -44,11 +49,12 @@ public class MainController {
 	@FXML 
 	void menuEtiquetado(ActionEvent event) {
 		try {
-			Parent p = this.fxmlLoader.load(getClass().getResourceAsStream("/fxml/Etiquetado.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader();
+			Parent p = fxmlLoader.load(getClass().getResourceAsStream("/fxml/Etiquetado.fxml"));
 			this.panel.setCenter(p);   
 		} catch (IOException e) {
 			e.printStackTrace();
-		} 
+		}
 	}
 
 	@FXML 

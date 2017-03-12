@@ -24,5 +24,4 @@ public class EntradaTest {
 		boolean estado = entrada.llenarBaseDeDatos(datos);
 		assertTrue(estado);
 	}
-	
 }

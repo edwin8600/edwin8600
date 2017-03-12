@@ -5,7 +5,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apc.com.supervisioncompraspublicas.MainController">
+<BorderPane fx:id="panel" minHeight="400.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apc.com.supervisioncompraspublicas.MainController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -15,7 +15,10 @@
                   <MenuItem mnemonicParsing="false" onAction="#menuSalir" text="Salir" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" onAction="#menuCatalogo" text="Catalogo" />
+            <Menu mnemonicParsing="false" text="Catalogo">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#menuCatalogo" text="Catalogo" />
+               </items></Menu>
             <Menu mnemonicParsing="false" onAction="#menuEstadisticas" text="Estadisticas" />
             <Menu mnemonicParsing="false" text="Prueba">
                <items>
