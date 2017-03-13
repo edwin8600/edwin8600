@@ -43,7 +43,13 @@ public class MainController {
 
 	@FXML 
 	void menuEstadisticas(ActionEvent event) {
-
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader();
+			Parent p = fxmlLoader.load(getClass().getResourceAsStream("/fxml/Estadisticas.fxml"));
+			this.panel.setCenter(p);   
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@FXML 

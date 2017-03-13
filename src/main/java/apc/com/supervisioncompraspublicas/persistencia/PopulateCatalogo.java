@@ -51,6 +51,7 @@ public class PopulateCatalogo {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		Persistencia.cerrarConexion();
 		
 		return catalogos;
 	}
