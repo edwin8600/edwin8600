@@ -18,6 +18,12 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Series;
 
+/**
+ * Despliega los graficos de barras
+ * @author luis
+ *
+ */
+
 public class EstadisticasController {
 
 	@FXML private BarChart<String, Integer> entidadCantidad;
@@ -25,7 +31,10 @@ public class EstadisticasController {
 	@FXML private BarChart<String, Integer> tipoCantidad;
 	@FXML private BarChart<String, Integer> lugarCantidad;
 	
-    
+    /**
+     * Carga datos en la grafica de barras
+     */
+	
 	@FXML
 	public void initialize() {
 		entidadCantidad.getData().add(generadorEntidadCantidadSoftware());
@@ -33,6 +42,12 @@ public class EstadisticasController {
 		tipoCantidad.getData().add(generadorTipoCantidad());
 		lugarCantidad.getData().add(generadorLugarCantidad());
 	}
+	
+	/**
+	 * Genera la serie para entidad que adquiere software y la cantidad
+	 * de software adquirido
+	 * @return serie para ser usada en una grafica
+	 */
 	
 	public Series<String, Integer> generadorEntidadCantidadSoftware() {
 		
@@ -64,6 +79,12 @@ public class EstadisticasController {
 		return series;
 	}
 
+	/**
+	 * Genera la serie para entidad que adquiere software y el costo total
+	 * de software adquirido
+	 * @return serie para ser usada en una grafica
+	 */
+	
 	public Series<String, Double> generadorEntidadCostoSoftware() {
 		BarChart.Series<String, Double> series = new BarChart.Series<>();
 		Connection conn = Persistencia.instancia();
@@ -92,6 +113,12 @@ public class EstadisticasController {
 		
 		return series;
 	}
+	
+	/**
+	 * Genera la serie para el tipo de software y la cantidad
+	 * de software adquirido
+	 * @return serie para ser usada en una grafica
+	 */
 
 	public Series<String, Integer> generadorTipoCantidad() {
 		BarChart.Series<String, Integer> series = new BarChart.Series<>();
@@ -123,6 +150,12 @@ public class EstadisticasController {
 		return series;
 	}
 
+	/**
+	 * Genera la serie para el lugar en que se adquiere software y la cantidad
+	 * de software adquirido
+	 * @return serie para ser usada en una grafica
+	 */
+	
 	public Series<String, Integer> generadorLugarCantidad() {
 		BarChart.Series<String, Integer> series = new BarChart.Series<>();
 		Connection conn = Persistencia.instancia();
@@ -151,6 +184,4 @@ public class EstadisticasController {
 		
 		return series;
 	}
-
-	
 }

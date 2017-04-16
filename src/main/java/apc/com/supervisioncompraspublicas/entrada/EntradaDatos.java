@@ -23,8 +23,20 @@ import org.json.JSONObject;
 import apc.com.supervisioncompraspublicas.etiquetado.EtiquetadoNER;
 import apc.com.supervisioncompraspublicas.persistencia.Persistencia;
 
+/**
+ * Carga datos desde un archivo JSON y lo almacena en la base de datos
+ * @author luis
+ *
+ */
+
 public class EntradaDatos {
 
+	/**
+	 * Genera JSON iterable para posterior manipulacion
+	 * @param direccionArchivo
+	 * @return estructura de datos JSON iterable
+	 */
+	
 	public JSONArray archivoDatos(String direccionArchivo) {
 		FileReader archivo;
 		String informacion = "";
@@ -48,6 +60,13 @@ public class EntradaDatos {
 		JSONArray json = new JSONArray(informacion);
 		return json;
 	}
+	
+	/**
+	 * Insertar base de datos
+	 * @param datos arreglo JSON
+	 * @return True si fue correcto False sino ocurre un error
+	 * en la inserción
+	 */
 	
 	public boolean llenarBaseDeDatos(JSONArray datos) {
 		Connection conn = Persistencia.instancia();

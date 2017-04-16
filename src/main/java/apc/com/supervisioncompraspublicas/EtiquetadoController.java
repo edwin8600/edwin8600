@@ -16,6 +16,12 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
+/**
+ * Visualiza el etiquetado de una frase
+ * @author luis
+ *
+ */
+
 public class EtiquetadoController
 {
 	private static final Logger log = LoggerFactory.getLogger(EtiquetadoController.class);
@@ -71,6 +77,7 @@ public class EtiquetadoController
 						}
 					}
 
+					// Adjunta las palabras previamente formateadas
 					if (key == tokenPalabras.length-1) {
 						display.getChildren().add(texto);
 

@@ -15,6 +15,12 @@ public class MainApp extends Application {
 
 	public static void main(String[] args) throws Exception {
 
+			
+		/**
+		 * En caso de necesitar entrenar un nuevo corpus desactivar este codigo
+		 * TODO: Separar a un programa diferente el clasificador
+		 */
+		
 		// Entrenamiento
 		//EntrenamientoNER entrenamientoNER = new EntrenamientoNER();
 		//entrenamientoNER.entrenar();
@@ -25,16 +31,15 @@ public class MainApp extends Application {
 	public void start(Stage stage) throws Exception {
 
 		log.info("Supervision compras públicas");
-
 		String fxmlFile = "/fxml/Main.fxml";
 		log.debug("Cargado FXML vista principal desde: {}", fxmlFile);
+		
 		FXMLLoader loader = new FXMLLoader();
 		Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
 		log.debug("Mostrando JFX scene");
 		Scene scene = new Scene(rootNode);
 		scene.getStylesheets().add("/styles/styles.css");
-
 		stage.setTitle("Supervision compras públicas");
 		stage.setScene(scene);
 		stage.show();

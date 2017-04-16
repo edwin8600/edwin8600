@@ -11,6 +11,13 @@ import javafx.scene.Parent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 
+/**
+ * Eventos que cargan las vistas cuando se da clic
+ * en los diferentes elementos
+ * 
+ * @author luis
+ */
+
 public class MainController {
 
 	@FXML private BorderPane panel;

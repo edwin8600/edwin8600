@@ -1,16 +1,16 @@
 package apc.com.supervisioncompraspublicas;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-
 import apc.com.supervisioncompraspublicas.persistencia.Catalogo;
-import apc.com.supervisioncompraspublicas.persistencia.Persistencia;
 import apc.com.supervisioncompraspublicas.persistencia.PopulateCatalogo;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
+
+/**
+ * Carga de informacion y visualizacion en la tabla
+ * 
+ * @author luis
+ *
+ */
 
 public class CatalogoController {
 
