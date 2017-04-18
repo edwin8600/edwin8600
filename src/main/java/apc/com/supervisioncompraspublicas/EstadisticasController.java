@@ -4,18 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 import apc.com.supervisioncompraspublicas.persistencia.Persistencia;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Series;
 
 /**
@@ -67,8 +59,8 @@ public class EstadisticasController {
 			
 			while(rs.next()) {
 				series.getData().add(new BarChart.Data<String, Integer>(rs.getString("entidad").substring(0, 15), rs.getInt("contador")));
-				System.out.println(rs.getString("entidad"));
-				System.out.println(rs.getInt("contador"));
+				// System.out.println(rs.getString("entidad"));
+				// System.out.println(rs.getInt("contador"));
 			}
 			
 		} catch (SQLException e) {
@@ -102,8 +94,8 @@ public class EstadisticasController {
 			
 			while(rs.next()) {
 				series.getData().add(new BarChart.Data<String, Double>(rs.getString("entidad").substring(0, 15), rs.getDouble("costo")));
-				System.out.println(rs.getString("entidad"));
-				System.out.println(rs.getDouble("costo"));
+				// System.out.println(rs.getString("entidad"));
+				// System.out.println(rs.getDouble("costo"));
 			}
 			
 		} catch (SQLException e) {
@@ -138,8 +130,8 @@ public class EstadisticasController {
 			
 			while(rs.next()) {
 				series.getData().add(new BarChart.Data<String, Integer>(rs.getString("tipo"), rs.getInt("contador")));
-				System.out.println(rs.getString("tipo"));
-				System.out.println(rs.getInt("contador"));
+				// System.out.println(rs.getString("tipo"));
+				// System.out.println(rs.getInt("contador"));
 			}
 			
 		} catch (SQLException e) {
@@ -173,8 +165,8 @@ public class EstadisticasController {
 			
 			while(rs.next()) {
 				series.getData().add(new BarChart.Data<String, Integer>(rs.getString("lugar"), rs.getInt("contador")));
-				System.out.println(rs.getString("lugar"));
-				System.out.println(rs.getInt("contador"));
+				// System.out.println(rs.getString("lugar"));
+				// System.out.println(rs.getInt("contador"));
 			}
 			
 		} catch (SQLException e) {

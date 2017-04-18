@@ -1,8 +1,6 @@
 package entrenamiento;
 import static org.junit.Assert.*;
 
-import java.io.OutputStream;
-
 import org.junit.Test;
 
 import apc.com.supervisioncompraspublicas.entrenamiento.EntrenamientoNER;

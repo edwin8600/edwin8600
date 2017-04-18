@@ -50,11 +50,6 @@
     
         <!-- MigLayout -->
 
-        <dependency>
-            <groupId>com.miglayout</groupId>
-            <artifactId>miglayout-javafx</artifactId>
-            <version>5.0</version>
-        </dependency>
 
         <!-- Apache Commons -->
 
@@ -102,6 +97,11 @@
         	<artifactId>json</artifactId>
         	<version>20151123</version>
         </dependency>
+        <dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>4.12</version>
+		</dependency>
     </dependencies>
 
 </project>

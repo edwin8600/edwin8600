@@ -5,17 +5,20 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Observable;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class PopulateCatalogo {
+	
+	
+	/**
+	 * Genera objeto observable de catalogos
+	 * @return Lista observable
+	 */
 
 	public static ObservableList<Catalogo> getListaCatalogo() {
 		
@@ -24,6 +27,12 @@ public class PopulateCatalogo {
 		return catalogoObservable;
 	
 	}
+	
+	/**
+	 * Toma los datos desde la base de datos y los almancena en el
+	 * objeto Catalogo
+	 * @return Arreglo con objetos Catalogo
+	 */
 	
 	public static ArrayList<Catalogo> getCatalogoBaseDeDatos() {
 		ArrayList<Catalogo> catalogos = new ArrayList<Catalogo>();

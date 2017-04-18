@@ -2,18 +2,16 @@ package apc.com.supervisioncompraspublicas.entrada;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.sql.Connection;
-import java.util.Date;
-import java.util.HashMap;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 
 import org.apache.commons.lang.StringEscapeUtils;
 import org.json.JSONArray;

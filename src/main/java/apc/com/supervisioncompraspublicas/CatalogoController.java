@@ -16,6 +16,10 @@ public class CatalogoController {
 
 	@FXML private TableView<Catalogo> tablaCatalogo;
 
+	/**
+	 * Llena los datos de la tabla catalogo 
+	 */
+	
 	@FXML
 	public void initialize() {
 

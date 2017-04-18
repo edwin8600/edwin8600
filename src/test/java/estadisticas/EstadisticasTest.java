@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import apc.com.supervisioncompraspublicas.EstadisticasController;
 import javafx.scene.chart.BarChart;
-import javafx.scene.chart.XYChart;
 
 public class EstadisticasTest {
 
